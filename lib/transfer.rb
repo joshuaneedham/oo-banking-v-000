@@ -40,11 +40,14 @@ class Transfer
       receiver.balance -= amount
       sender.balance += amount
       @status = "reversed"
+      # else added per solution
+    else
+      reject_transfer
     end
   end
 
   # rejected_transfer methos added per solution
-  def rejected_transfer
+  def reject_transfer
     self.status = "rejected"
     "Transaction rejected. Please check your account balance."
   end
